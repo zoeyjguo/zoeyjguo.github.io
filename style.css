@@ -90,7 +90,6 @@ CSS STRUCTURE:
   7.3 Page Navigation
 
 
-
 /*--------------------------------------------------------------
 /** 1. VARIABLES
 --------------------------------------------------------------*/
@@ -135,16 +134,16 @@ CSS STRUCTURE:
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 100%;
 }
-html {
-  box-sizing: border-box;
-}
+
 body {
   font-family: var(--body-font);
   font-size: 18px;
   font-weight: 300;
   line-height: 2;
   color: var(--body-text-color);
+  overflow-x: hidden;
 }
 body.no-scroll {
     overflow: hidden;
@@ -239,7 +238,6 @@ h1.light, .h1, h2.light, .h2, h3.light, .h3, h4.light, .h4, h5.light, .h5, h6.li
 }
 h1, h2, h3 {
   margin: 25px 0;
-  text-transform: capitalize;
 }
 h5, h6 {
   letter-spacing: 1px;
@@ -935,29 +933,12 @@ img.member-image {
     position: relative;
     z-index: 0;
 }
-.pattern .section-title:before {
-    content: "";
-    background: var(--secondary-color);
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    position: absolute;
-    top: -23px;
-    left: -41px;
-    z-index: -1;
-}
-.pattern.center-align .section-title:before {
-    left: -261px;
-    right: 0;
-    margin: 0 auto;
-}
 h4.sub-title {
     font-size: 1.1em;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     color: #053634;
     margin-bottom: 20px;
-    text-transform: capitalize;
 }
 
 
@@ -1568,7 +1549,6 @@ header .btn-search {
     line-height: 1.2;
     font-weight: 600;
     color: #000000;
-    text-transform: capitalize;
 }
 #billboard .banner-content p {
     margin-bottom: 15px;
@@ -1729,23 +1709,59 @@ header .btn-search {
 
 /*----- Portfolio Section
 --------------------------------------------------------------*/
+
 #portfolio {
-    position: relative;
-}
-#portfolio .portfolio-content {
-    margin-top: 80px;
-}
-#portfolio .portfolio-content .portfolio-item {
-    margin-bottom: 50px;
-}
-#portfolio .portfolio-content .portfolio-item.align-style {
-    margin-top: -30px;
-}
-#portfolio h3.item-title {
-    font-weight: 500;
-    padding-left: 15px;
+  padding-top: 80px;
+  margin: 0 auto;
 }
 
+#portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; /* Center items horizontally */
+  justify-content: center; 
+  align-items: center; /* Center items vertically */
+}
+
+.portfolio-item {
+	position: relative; /* Makes the portfolio-item the reference point for absolute positioning */
+	display: inline-block; /* Ensures items behave like inline blocks */
+	overflow: hidden; /* Ensures content stays within the boundaries of the portfolio-item */
+  border: 5px solid #b6032a;
+}
+
+.portfolio-item img {
+	width: 100%; /* Makes the image fill the container */
+	height: 100%; /* Ensures the image fills the container */
+	object-fit: cover; /* Ensures the image scales properly */
+	display: block; /* Removes extra space below the image */
+  filter: brightness(60%);
+  transition: 0.3s ease;
+}
+
+.portfolio-item img:hover {
+	opacity: 0.7;
+}
+
+#portfolio .portfolio-content .portfolio-item {
+  margin: 50px 100px;
+    
+}
+
+#portfolio span.item-title {
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%); 
+	color: white; 
+	font-size: 40px; 
+  font-weight: bold;
+	text-align: center;
+}
+
+#portfolio h3.item-title {
+    font-weight: 500;
+}
 @media only screen and (max-width: 991px) {
   img.portfolio-image {
       height: auto;
@@ -1878,7 +1894,6 @@ footer#footer {
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 40px;
-    text-transform: capitalize;
 }
 #footer ul li {
     list-style: none;
