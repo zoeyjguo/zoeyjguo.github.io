@@ -110,10 +110,10 @@ CSS STRUCTURE:
 }
 /* Theme Colors */
 :root {
-    --accent-color       : #053634;
-    --secondary-color    : #ebB017;
-    --dark-color         : #053634;
-    --body-text-color    : #053634;
+    --accent-color       : #000000;
+    --secondary-color    : #b6032a;
+    --dark-color         : #000000;
+    --body-text-color    : #000000;
     --background-color   : #f0f1EA;
     --light-accent-color  : #A4B7B1;
     --light-background-color   : #f8f6f1;
@@ -174,7 +174,7 @@ ul li, ol li {
   outline: 0;
 }
 ul li.active a{
-  color: #daa556;
+  color: #b6032a;
 }
 ul li:last-child,
 ol li:last-child {
@@ -296,11 +296,11 @@ code {
   background-color:  var(--grey-color);
 }
 abbr {
-  border-bottom: 0.1px dotted #666;
+  border-bottom: 0.1px dotted #000000;
   cursor: help;
 }
 ::placeholder {
-    color: #999;
+    color: #000000;
 }
 
 /*----------------------------------------------*/
@@ -1111,7 +1111,6 @@ blockquote cite {
   text-transform: uppercase;
   text-align: center;
   color: #111;
-  float: left;
 } 
 .dropcap.colored {
   color: #2bcaae;
@@ -1427,94 +1426,10 @@ blockquote cite {
 /* 7. SITE STRUCTURE */
 /*----------------------------------------------*/
 
-/* 7.1 Preloader */
-
-*.preloader {
-    width:100%;
-    height:100%;  
-    position:fixed;
-    z-index:20;
-    background: var(--light-background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.preloader:last-child {
-  margin-right: 0;
-}
-.dot {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  background-color: var(--secondary-color);
-  animation: loader 5s infinite ease-out;
-}
-
-@keyframes loadingInner {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-/* =Animate the stuff
------------------------- */
-.loader .dot:nth-last-child(1) {
-  animation: loadingInner 0.6s 0.1s linear infinite;
-}
-.loader .dot:nth-last-child(2) {
-  animation: loadingInner 0.6s 0.2s linear infinite;
-}
-.loader .dot:nth-last-child(3) {
-  animation: loadingInner 0.6s 0.3s linear infinite;
-}
-
-
 /*--------------------------------------------------------------
-/** 7.2 Header
+/** Header
 --------------------------------------------------------------*/
 
-/* search box */
-.search-box {
-    position: relative;
-    background: var(--dark-color);
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    transition: height 0.3s ease-out;
- } 
-.search-box.active {
-    height: 140px;
-}
-.search-box #search-form {
-    margin: 0;
-}
-.search-box .icon-search {
-    margin-left: -60px;
-}
-.search-box input.search-input {
-    font-size: 1.2em;
-    color: var(--light-color);
-    width: 40%;
-    min-width: 420px;
-    padding: 30px;
-    margin-top: 35px;
-    border-radius: 80px;
-    border-color: rgb(255 255 255 / 30%);
-}
-.close-button {
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    color: aliceblue;
-    cursor: pointer;
-}
 /* - Main Navigation
 ------------------------------------------------------------- */
 #header .container {
@@ -1538,6 +1453,13 @@ nav#navbar {
     display: flex;
     justify-content: flex-end;
 }
+
+.main-logo {
+  width: 50px; /* Set an initial width */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
 .main-menu.stellarnav.desktop li.has-sub > ul > li > a {
     padding: 14px 20px;
     background: #f8f6f1;
@@ -1552,31 +1474,19 @@ nav#navbar {
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #053634;
-    padding: 0 25px 50px;
+    color: #000000;
+    padding-bottom: 20px;
     text-transform: uppercase;
     border-bottom: 3px solid rgba(235,176,23,0);
     transition: 0.3s ease-in-out;
 }
 .main-menu ul.menu-list a.active,
 .main-menu ul.menu-list a:hover {
-    border-bottom: 3px solid rgba(235,176,23,1);
+    border-bottom: 3px solid #b6032a;
 }
 header .btn-search {
     padding: 0 20px;
     cursor: pointer;
-}
-header .hamburger {
-    display: none;
-}
-header .hamburger .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #053634;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1619,7 +1529,7 @@ header .hamburger .bar {
         padding: 0;
     }
     .main-menu ul.menu-list.responsive a:hover {
-        color: #ebb017;
+        color: #b6032a;
     }
     header .hamburger {
         display: block;
@@ -1639,66 +1549,25 @@ header .hamburger .bar {
         transform: translateY(-8px) rotate(-45deg);
     }
  }
-
-
-/* - Search Form
-------------------------------------------------------------- */
-#header .search-button {
-    order: 1;
-    color: #053634;
-}
-#header.show .search-box {
-    max-height: 40px;
-    opacity: 1;
-}
-#header .search-box {
-    position: absolute;
-    top: 46px;
-    right: 10px;
-    width: 100%;
-    height: 100%;
-    max-height: 0;
-    max-width: 300px;
-    min-width: 300px;
-    z-index: 999;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    overflow: hidden;
-}
-#header.show .search-box .search-input {
-    opacity: 1;
-}
-#header .search-box .search-input {
-    width: 100%;
-    height: 100%;
-    font-weight: 300;
-    color: #000;
-    padding-left: 20px;
-    background: #f0f1ea;
-    border: 1px solid #d0d3b9;
-}
-
-
+ 
 /*----- Billboard
 --------------------------------------------------------------*/
 #billboard .slider-item {
     display: flex;
 }
 #billboard .banner-content {
-    width: 95%;
-    padding: 195px 0 80px 170px;
+    width: 100%;
+    padding: 195px 100px 80px 170px;
     position: relative;
 }
 #billboard .banner-element {
-    width: 80%;
+    width: 100%;
 }
 .banner-content h2.banner-title {
     font-size: 3.8em;
     line-height: 1.2;
     font-weight: 600;
-    color: #053634;
+    color: #000000;
     text-transform: capitalize;
 }
 #billboard .banner-content p {
@@ -1749,7 +1618,7 @@ header .hamburger .bar {
 
 @media only screen and (max-width: 1340px) {
   #billboard .banner-content {
-      padding: 80px 0 80px 80px;
+      padding: 40px 0 40px 80px;
   }
 }
 @media only screen and (max-width: 999px) {
@@ -2049,7 +1918,7 @@ footer#footer {
 }
 #interiors-features .features-item i.icon {
     font-size: 3em;
-    color: #ebb017;
+    color: #b6032a;
 }
 #interiors-features .features-item h3.feature-title {
     font-size: 1.2em;
@@ -2088,7 +1957,7 @@ footer#footer {
     display: block;
     line-height: 1;
     padding: 12px 10px;    
-    color: #053634;
+    color: #000000;
 }
 .blog-page .post-grid .meta-date strong {
     font-size: 35px;
