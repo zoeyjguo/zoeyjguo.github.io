@@ -1673,46 +1673,23 @@ header .btn-search {
   }
 }
 
-/*----- Services Section
---------------------------------------------------------------*/
-#services {
-    position: relative;
-    padding-left: 2em;
-}
-#services .detail-wrap {
-    margin-right: 20px;
-    margin-bottom: 50px;
-}
-#services ul.tabs {
-    display: flex;
-    justify-content: space-between;
-    padding: 35px 30px; 
-    list-style-type: decimal-leading-zero;
-}
-#services ul.tabs li {
-    font-size: 0.9em;
-    line-height: 1.5;
-    width: 29%;
-    display: list-item;
-    padding-right: 15px;
-    border-right: 1px solid #E0E2D8;
-    opacity: 0.4;
-    transition: opacity 0.3s ease-out;
-}
-#services ul.tabs li.active {
-    opacity: 1;
-}
-#services ul.tabs li:last-child {
-    border-right: none;
-    padding-right: 0;
-}
-
 /*----- Portfolio Section
 --------------------------------------------------------------*/
 
 #portfolio {
-  padding-top: 80px;
+  padding-top: 40px;
   margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+#portfolio .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#portfolio .container .section {
+  text-align: center;
 }
 
 #portfolio .portfolio-content {
@@ -1735,16 +1712,20 @@ header .btn-search {
 	height: 100%; /* Ensures the image fills the container */
 	object-fit: cover; /* Ensures the image scales properly */
 	display: block; /* Removes extra space below the image */
-  filter: brightness(60%);
-  transition: 0.3s ease;
+  filter: brightness(80%);
 }
 
-.portfolio-item img:hover {
-	opacity: 0.7;
+#portfolio .section-title {
+  margin-bottom: 0;
 }
 
 #portfolio .portfolio-content .portfolio-item {
-  margin: 50px 100px;
+  margin: 15%;
+  transition: 0.5s ease;
+}
+
+#portfolio .portfolio-content .portfolio-item:hover {
+  opacity: 0.7;
     
 }
 
@@ -1767,106 +1748,6 @@ header .btn-search {
       height: auto;
   }
 }
-
-
-/*----- Testimonial Section
---------------------------------------------------------------*/
-#testimonial {
-    padding-left: 2em;
-}
-#testimonial .testimonial-grid {
-    margin-top: 80px;
-}
-#testimonial .testimonial-item .quote-boxed {
-    border: 1px solid #EBE8E0;
-    padding: 35px;
-}
-#testimonial .author-detail {
-    position: relative;
-    margin-left: 100px;
-}
-#testimonial .author-detail:before {
-    content: "";
-    width: 70px;
-    height: 2px;
-    position: absolute;
-    top: 18px;
-    left: -100px;
-    border-top: 1px solid #DDDFD5;
-}
-.author-detail .author-name {
-    font-family: "Playfair Display", Georgia, serif;
-}
-.author-detail .author-profession {
-    font-size: 0.8em;
-}
-#testimonial .slick-dots {
-    bottom: -55px;
-    z-index: 9;
-}
-.slick-dots li button:before {
-    font-size: 50px;
-    color: #D7DAC6;
-    opacity: 1;
-}
-
-/*----- Newsletter Section
---------------------------------------------------------------*/
-#subscribe .subscribe-content {
-    margin-top: 200px;
-    margin-left: 80px;
-}
-#subscribe form#form {
-    display: flex;
-    align-items: baseline;
-    margin-top: 50px;
-}
-#subscribe input[type="text"] {
-    width: 100%;
-    height: 60px;
-    background: transparent;
-    border: 1px solid #B5C3BE;
-    font-style: italic;
-    padding-left: 15px;
-}
-#subscribe button.btn-subscribe {
-    height: 60px;
-    margin: 0;
-}
-#subscribe button.btn-subscribe:hover {
-    background: var(--secondary-color);
-}
-
-@media only screen and (max-width: 600px) {
-  #subscribe form#form {
-      flex-wrap: wrap;
-  }
-  #subscribe button.btn-subscribe {
-      width: 100%;
-  }
-}
-
-
-/*----- Articles Section
---------------------------------------------------------------*/
-#latest-blog {
-    position: relative;
-}
-#latest-blog .post-grid {
-    margin-top: 80px;
-}
-#latest-blog .image-holder {
-    margin-bottom: 20px;
-}
-#latest-blog .post-item {
-    padding-left: 20px;
-    margin-bottom: 50px;
-}
-.post-item h3.post-title {
-    font-weight: 500;
-    margin: 0;
-}
-
 
 /*----- Contact Section
 --------------------------------------------------------------*/
