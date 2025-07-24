@@ -1540,6 +1540,7 @@ header .btn-search {
     width: 100%;
     padding: 195px 100px 80px 170px;
     position: relative;
+    /* place-items: center; */
 }
 #billboard .banner-element {
     width: 100%;
@@ -1552,6 +1553,7 @@ header .btn-search {
 }
 #billboard .banner-content p {
     margin-bottom: 15px;
+    /* padding-right: 100px; */
 }
 #billboard .banner-holder {
     width: 60%;
@@ -1641,27 +1643,23 @@ header .btn-search {
   }
 }
 
-
-/*----- Brand Collection Section
---------------------------------------------------------------*/
-#brand-collection {
-    border-bottom: 1px solid #E5E7DD;
-    margin-bottom: 160px;
-}
-#brand-collection .brand-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-#brand-collection img {
-    object-fit: contain;
-    margin: 14px;
-}
-
 /*----- About Me Section
 --------------------------------------------------------------*/
-#about .detail-entry {
-    margin: 90px 0 0 90px;
+
+#about .section {
+  padding-top: 80px;
+  padding-bottom: -120px;
+}
+
+#about a {
+  color:blue;
+  text-decoration: underline;
+}
+
+#about .content {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
 }
 
 @media only screen and (max-width: 799px) {
@@ -1677,9 +1675,8 @@ header .btn-search {
 --------------------------------------------------------------*/
 
 #portfolio {
+  background-color: var(--background-color);
   padding-top: 40px;
-  margin: 0 auto;
-  padding-bottom: 40px;
 }
 
 #portfolio .container {
@@ -1692,30 +1689,32 @@ header .btn-search {
   text-align: center;
 }
 
+
 #portfolio .portfolio-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center; /* Center items horizontally */
+  justify-items: center; 
   justify-content: center; 
-  align-items: center; /* Center items vertically */
+  align-items: center;
 }
 
 .portfolio-item {
-	position: relative; /* Makes the portfolio-item the reference point for absolute positioning */
-	display: inline-block; /* Ensures items behave like inline blocks */
-	overflow: hidden; /* Ensures content stays within the boundaries of the portfolio-item */
+	position: relative;
+	display: inline-block; 
+	overflow: hidden; 
   border: 5px solid #b6032a;
 }
 
 .portfolio-item img {
-	width: 100%; /* Makes the image fill the container */
-	height: 100%; /* Ensures the image fills the container */
-	object-fit: cover; /* Ensures the image scales properly */
-	display: block; /* Removes extra space below the image */
+	width: 100%; 
+	height: 100%;
+	object-fit: cover;
+	display: block;
   filter: brightness(80%);
 }
 
 #portfolio .section-title {
+  height: 5px;
   margin-bottom: 0;
 }
 
@@ -1749,157 +1748,74 @@ header .btn-search {
   }
 }
 
-/*----- Contact Section
+/*----- Art Section
 --------------------------------------------------------------*/
-#contact p {
-    width: 87%;
+
+#art {
+  background-color: #fff;
+  padding-top: 40px;
 }
 
-/*----- Footer Section
---------------------------------------------------------------*/
-footer#footer {
-    border-bottom: 1px solid #E5E7DD;
+#art .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
 }
-#footer .footer-item {
-    width: 30%;
-    margin-right: 115px;
+
+#art .art-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; 
+  justify-content: center; 
+  align-items: center;
 }
-#footer .footer-item img.footer-logo {
-    margin-bottom: 40px;
+
+.art-item {
+	position: relative;
+	display: inline-block; 
+	overflow: hidden; 
+  justify-items: center; 
+  align-items: center;
 }
-#footer .footer-item p {
-    width: 80%;
+
+.art-item img {
+	width: 100%; 
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  border: 5px solid #b6032a;
 }
-#footer h5 {
-    font-size: 1.3em;
+
+#art .art-content .art-item {
+  margin: 15%;
+  transition: 0.5s ease;
+}
+
+#art .art-content .art-item:hover {
+  opacity: 0.7;
+    
+}
+
+#art span.item-title {
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%); 
+	color: white; 
+	font-size: 40px; 
+  font-weight: bold;
+	text-align: center;
+}
+
+#art h3.item-title {
     font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 40px;
 }
-#footer ul li {
-    list-style: none;
-}
-#footer-bottom ul {
-    display: flex;
-    justify-content: end;
-    margin: 0;
-}
-#footer-bottom p {
-     margin: 0;
-}
-#footer-bottom .social-links li {
-    margin-right: 30px;
-    list-style: none;
-}
-
-@media only screen and (max-width: 991px) {  
-  #footer-bottom p {
-      text-align: center;
-  }
-  #footer-bottom ul {
-      justify-content: center;
+@media only screen and (max-width: 991px) {
+  img.art-image {
+      height: auto;
   }
 }
 
-
-/*--------------------------------------------------------------
-/**  About Us Page
---------------------------------------------------------------*/
-
-/*-- Feature Icon 
-----------------*/
-#interiors-features .features-item {
-    text-align: center;
-    margin-bottom: 40px;
-}
-#interiors-features .features-item i.icon {
-    font-size: 3em;
-    color: #b6032a;
-}
-#interiors-features .features-item h3.feature-title {
-    font-size: 1.2em;
-    line-height: 1.4;
-}
-
-/*-- Team Member 
-----------------*/
-.team-member .member-details {
-    margin-top: 20px;
-}
-.member-details h4.member-title {
-  margin: 0;
-}
-.member-slider .slick-dots {
-    bottom: -80px;
-}
-.our-team .team-member {
-    margin-right: 20px;
-}
-
-
-/*--------------------------------------------------------------
-/** . Blog Page
---------------------------------------------------------------*/
-.blog-page .post-grid .post-item {
-    border-bottom: 2px solid #eeeeee;
-}
-.blog-page .post-grid .post-media {
-    margin-bottom: 20px;
-}
-.blog-page .post-grid .post-meta {
-    margin-bottom: 20px;
-}
-.blog-page .post-grid .meta-date {
-    display: block;
-    line-height: 1;
-    padding: 12px 10px;    
-    color: #000000;
-}
-.blog-page .post-grid .meta-date strong {
-    font-size: 35px;
-}
-.blog-page .post-grid .post-content h2.post-title {
-    margin: 0 0 20px;
-}
-.blog-page .post-grid .post-item:nth-child(2n+2) .row {
-    flex-direction: row-reverse;
-}
-
-@media only screen and (max-width: 991px) {  
-  .blog-page .post-grid .post-item:nth-child(2n+2) .row {
-      flex-direction: inherit;
-  }
-}
-
-/*--------------------------------------------------------------
-/**  Contact Us Page
---------------------------------------------------------------*/
-.contact-page .contact-detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.contact-page .contact-detail .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-color);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.contact-page .contact-detail .icon>img {
-    width: 50%;
-}
-.contact-page .contact-detail .detail-item {
-    margin-left: 20px;
-}
-.contact-page .detail-item h4.icon-title {
-    margin: 0;
-}
-.contact-page .detail-item p {
-    margin: 0;
-}
 
 /*--------------------------------------------------------------
 /** . THIRD PARTY COMPONENTS
