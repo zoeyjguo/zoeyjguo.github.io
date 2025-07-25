@@ -1542,7 +1542,6 @@ header .btn-search {
     width: 100%;
     padding: 195px 100px 80px 170px;
     position: relative;
-    /* place-items: center; */
 }
 #billboard .banner-element {
     width: 100%;
@@ -1555,7 +1554,6 @@ header .btn-search {
 }
 #billboard .banner-content p {
     margin-bottom: 15px;
-    /* padding-right: 100px; */
 }
 #billboard .banner-holder {
     width: 60%;
@@ -1912,6 +1910,79 @@ header .btn-search {
   }
 }
 
+
+/*----- Experience Section
+--------------------------------------------------------------*/
+
+#experience-billboard .banner-element {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* Timeline Container */
+.timeline {
+  padding-top: 40px;
+  display: flex;
+  margin: 20px auto;
+  padding-left: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline ul {
+  list-style-position: outside; 
+  padding-left: 20px;
+}
+
+.timeline .timeline-heading {
+  margin-top: -10px;
+  margin-bottom: 0px;
+}
+
+.timeline li::marker {
+  color: #b6032a;
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+  border-left: 2px solid #b6032a;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  margin: 0 0 20px 20px;
+  padding-right: 50px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  width: 90%;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+/* Title of the card */
+.title {
+  color: #b6032a;
+  position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #b6032a;
+  border-radius: 999px;
+  left: -76px;
+  bottom: 13px;
+  border: 3px solid #b6032a;
+}
 
 /*--------------------------------------------------------------
 /** . THIRD PARTY COMPONENTS
