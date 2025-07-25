@@ -1010,6 +1010,8 @@ h4.sub-title {
 --------------------------------------------------------------*/
 .bg-body {
   background-color: var(--light-background-color);
+  align-items: center;
+  justify-content: center;
 }
 .bg-accent {
   background-color: var(--background-color);
@@ -1698,14 +1700,14 @@ header .btn-search {
   align-items: center;
 }
 
-.portfolio-item {
+#portfolio .portfolio-item {
 	position: relative;
 	display: inline-block; 
 	overflow: hidden; 
   border: 5px solid #b6032a;
 }
 
-.portfolio-item img {
+#portfolio .portfolio-item img {
 	width: 100%; 
 	height: 100%;
 	object-fit: cover;
@@ -1742,6 +1744,7 @@ header .btn-search {
 #portfolio h3.item-title {
     font-weight: 500;
 }
+
 @media only screen and (max-width: 991px) {
   img.portfolio-image {
       height: auto;
@@ -1753,7 +1756,11 @@ header .btn-search {
 
 #art {
   background-color: #fff;
-  padding-top: 40px;
+}
+
+#art-billboard .banner-element {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 #art .container {
@@ -1770,7 +1777,7 @@ header .btn-search {
   align-items: center;
 }
 
-.art-item {
+#art .art-item {
 	position: relative;
 	display: inline-block; 
 	overflow: hidden; 
@@ -1778,7 +1785,7 @@ header .btn-search {
   align-items: center;
 }
 
-.art-item img {
+#art .art-item img {
 	width: 100%; 
 	height: 100%;
 	object-fit: cover;
@@ -1787,7 +1794,7 @@ header .btn-search {
 }
 
 #art .art-content .art-item {
-  margin: 15%;
+  margin: 5%;
 }
 
 #art span.item-title {
@@ -1813,18 +1820,41 @@ header .btn-search {
 /*----- Design Section
 --------------------------------------------------------------*/
 
-#art {
+#design {
   background-color: #fff;
   padding-top: 40px;
 }
 
-#art .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+#design-billboard .banner-element {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
-#art .art-content {
+#design .price-to-play {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center; 
+  justify-content: center; 
+  align-items: center;
+}
+
+#design .price-to-play .design-item {
+  margin: 5%;
+}
+
+#design .design-spread {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center; 
+  justify-content: center; 
+  align-items: center;
+}
+
+#design .design-spread .design-item {
+  margin: 5%;
+}
+
+#design .design-pages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center; 
@@ -1832,15 +1862,20 @@ header .btn-search {
   align-items: center;
 }
 
-.art-item {
+#design .design-pages .design-item {
+  margin: 5%;
+}
+
+#design .design-item {
 	position: relative;
 	display: inline-block; 
 	overflow: hidden; 
   justify-items: center; 
   align-items: center;
+  margin: 5%;
 }
 
-.art-item img {
+#design .design-item img {
 	width: 100%; 
 	height: 100%;
 	object-fit: cover;
@@ -1848,11 +1883,11 @@ header .btn-search {
   border: 5px solid #b6032a;
 }
 
-#art .art-content .art-item {
+#design .design-item {
   margin: 15%;
 }
 
-#art span.item-title {
+#design span.item-title {
 	position: absolute;
 	top: 50%; 
 	left: 50%;
@@ -1863,11 +1898,16 @@ header .btn-search {
 	text-align: center;
 }
 
-#art h3.item-title {
+#design h3.item-title {
     font-weight: 500;
 }
+
+#design p {
+  font-size: 1.25em;
+}
+
 @media only screen and (max-width: 991px) {
-  img.art-image {
+  img.design-image {
       height: auto;
   }
 }
