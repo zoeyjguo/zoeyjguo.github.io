@@ -1920,7 +1920,7 @@ header .btn-search {
 }
 
 /* Timeline Container */
-.timeline {
+#timeline {
   padding-top: 40px;
   display: flex;
   margin: 20px auto;
@@ -1929,27 +1929,27 @@ header .btn-search {
   justify-content: center;
 }
 
-.timeline ul {
+#timeline ul {
   list-style-position: outside; 
   padding-left: 20px;
 }
 
-.timeline .timeline-heading {
+#timeline .timeline-heading {
   margin-top: -10px;
   margin-bottom: 0px;
 }
 
-.timeline li::marker {
+#timeline li::marker {
   color: #b6032a;
 }
 
 /* Outer Layer with the timeline border */
-.outer {
+#timeline .outer {
   border-left: 2px solid #b6032a;
 }
 
 /* Card container */
-.card {
+#timeline .card {
   position: relative;
   margin: 0 0 20px 20px;
   padding-right: 50px;
@@ -1959,20 +1959,20 @@ header .btn-search {
 }
 
 /* Information about the timeline */
-.info {
+#timeline .info {
   display: flex;
   flex-direction: column;
   padding-left: 50px;
 }
 
 /* Title of the card */
-.title {
+#timeline .title {
   color: #b6032a;
   position: relative;
 }
 
 /* Timeline dot  */
-.title::before {
+#timeline .title::before {
   content: "";
   position: absolute;
   width: 10px;
